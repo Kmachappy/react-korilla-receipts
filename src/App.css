@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -15,7 +20,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 100vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +40,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+.receipts-area{
+  text-align: left;
+  display: grid;
+  gap: 1vmin;
+  grid-template: 1fr/repeat(3,1fr);
+  padding: 4vmin;
+  width: 80vmin;
+}
+.receipt-card{
+  
+  padding-left: 3vmin;
+  border: 1px solid orangered;
+  max-width: 75%;
+}
+.order{
+  color: purple;
+}
+.hl{
+  width: 70%;
+  text-align: right;
+  margin-left: 0;
 }
