@@ -43,17 +43,24 @@
 }
 .receipts-area{
   text-align: left;
-  display: grid;
-  gap: 1vmin;
-  grid-template: 1fr/repeat(3,1fr);
-  padding: 4vmin;
-  width: 80vmin;
+  /* display: grid; */
+  /* gap: 1vmin; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* grid-template: 1fr/repeat(3,1fr); */
+  padding: 2vmin;
+  width: 80%;
 }
 .receipt-card{
-  
+  width: 300px;
+  margin: 1vh;
+  /* width: 20%; */
   padding-left: 3vmin;
   border: 1px solid orangered;
-  max-width: 75%;
+  /* max-width: 100%; */
 }
 .order{
   color: purple;

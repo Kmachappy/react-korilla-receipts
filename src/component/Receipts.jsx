@@ -1,12 +1,23 @@
-const Receipts = ({receipts})=>{
+const Receipts = ({receipts,setReceipt})=>{
     
-    // console.log(receipts)
+    // console.log("paid: " , receipts[1].paid)
+    const handleToggle = (index) =>{
+        let receiptsCopy = [...receipts]
+        // console.log("all array:", receiptsCopy)
+        console.log("one arr: " , receiptsCopy[index])
+        receiptsCopy[index].paid = !receiptsCopy[index].paid
+        console.log("after click: " , receiptsCopy[index])
+        console.log("arr after click", receiptsCopy)
+        setReceipt(receiptsCopy)
+        
+    }
+
 
     return(
         <div className="receipts-area">
-            {receipts.map(client =>{
+            {receipts.map((client, index) =>{
             return(
-            <div className="receipt-card">
+            <div className="receipt-card" key={index}>
                 <h1>{client.person}</h1>
                 <h3>{client.order.main}</h3>
                 <hr class="hl"></hr>
@@ -16,7 +27,11 @@ const Receipts = ({receipts})=>{
                 <p>Sauce: {client.order.sauce}</p>
                 <p>Drink: {client.order.drink}</p>
                 <p>Cost: {client.order.cost}</p>
-                <p>Paid: {client.order.paid ? "true": "false"} </p>
+                    <p style={{color: client.paid ? "green" : "red"}} 
+                     onClick={()=>handleToggle(index)}>
+                        Paid: {client.paid ? "True": "False"  } 
+                    </p>
+                    {/* <button>Paid</button> */}
                 </div>
             </div>
             )

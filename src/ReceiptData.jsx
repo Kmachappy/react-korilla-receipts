@@ -36,7 +36,7 @@ const receipts = [
         drink: "Sparkling Blood Orange Soda",
         cost: 20,
       },
-      paid: false,
+      paid: true,
     },
   ]
 
